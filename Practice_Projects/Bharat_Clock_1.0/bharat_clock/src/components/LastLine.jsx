@@ -1,9 +1,8 @@
 function LastLine(){
 
+  let time = new Date();
 
-
-
-  return <p>This is the current time : {new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" })}</p>
+  return <p>This is the current time : {time.toLocaleDateString()}</p>
 }
 
 export default LastLine;

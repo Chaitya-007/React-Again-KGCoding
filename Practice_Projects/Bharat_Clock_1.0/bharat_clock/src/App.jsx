@@ -1,14 +1,16 @@
 import AppName from './components/AppName'
 import TagLine from './components/TagLine'
 import LastLine from './components/LastLine'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 
 function App() {
-  return <div>
+  return <center>
     <AppName />
     <TagLine />
     <LastLine />
-  </div>
+  </center>
 }
 
 export default App
