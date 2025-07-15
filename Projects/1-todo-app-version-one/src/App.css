@@ -5,12 +5,18 @@ h1{
   margin-bottom: 20px;
 }
 
+
 input{
   width: 100%;
 }
 
 .items-container{
   text-align: left;
+}
+
+.kg-button{
+  /* I have changed the width of kg-button. Originally it was 80 px*/
+  min-width: 100px;
 }
 
 .kg-row{
