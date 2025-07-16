@@ -1,1 +1,5 @@
 the css that is included at the bottom has the highest priority 
+
+React Fragment :
+React Explects to return only a single component each time
+That's why we always store multiple components in a single component 
