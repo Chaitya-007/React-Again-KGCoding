@@ -2,7 +2,13 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
+  // let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
+
+  let foodItems = [];
+
+  if (foodItems.length === 0) {
+    return <h3>No food items available</h3>;
+  }
 
   return (
     <>
