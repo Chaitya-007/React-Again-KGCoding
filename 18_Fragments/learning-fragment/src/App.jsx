@@ -4,15 +4,15 @@ import ErrorMsg from "./components/ErrorMsg.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  // let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
+  let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
 
   // let foodItems = [];
 
   return (
     <>
       <h1>Healthy Food</h1>
-      <ErrorMsg></ErrorMsg>
-      <FoodItems></FoodItems>
+      <ErrorMsg items={foodItems}></ErrorMsg>
+      <FoodItems items={foodItems}></FoodItems>
     </>
   );
 }
