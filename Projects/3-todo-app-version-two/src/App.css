@@ -1,0 +1,24 @@
+h1{
+  font-weight: 700;
+  font-size: 45px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+
+input{
+  width: 100%;
+}
+
+.items-container{
+  text-align: left;
+}
+
+.kg-button{
+  /* I have changed the width of kg-button. Originally it was 80 px*/
+  min-width: 100px;
+}
+
+.kg-row{
+  margin: 10px 5px;
+}
