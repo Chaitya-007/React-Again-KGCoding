@@ -1,0 +1,11 @@
+.spanButton
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  width: 80px;
+  height: 50px;
+  
+}

@@ -1,8 +1,10 @@
+import styles from "./CustomButton.module.css";
+
 function CustomButton({ numbers }) {
   return (
     <>
       {numbers.map((num) => (
-        <span className="spanButton">{num}</span>
+        <span className={styles.spanButton}>{num}</span>
       ))}
     </>
   );
