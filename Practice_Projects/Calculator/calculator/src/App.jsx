@@ -22,11 +22,17 @@ function App() {
     ".",
   ];
 
+  let str = "";
+
+  const handleBtnClick = (e) => {
+    str += e.target.value;
+  };
+
   return (
     <center id="calculator">
       <input id="calInput" type="text" />
       <div id="btn">
-        <CustomButton numbers={numbers} />
+        <CustomButton onClick={handleBtnClick} numbers={numbers} />
       </div>
     </center>
   );
