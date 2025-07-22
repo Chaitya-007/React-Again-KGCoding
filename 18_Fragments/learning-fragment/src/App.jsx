@@ -8,11 +8,13 @@ import "./App.css";
 
 function App() {
   let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
+  let textToShow = "All the food items are healthy and nutritious.";
 
   // let foodItems = [];
 
   const handleChange = (event) => {
     console.log(`New food item: ${event.target.value}`);
+    textToShow = event.target.value;
   };
 
   return (
@@ -21,6 +23,7 @@ function App() {
         <h1 className="food-heading">Healthy Food</h1>
         <ErrorMsg items={foodItems}></ErrorMsg>
         <FoodInput handleChange={handleChange}></FoodInput>
+        <p>{textToShow}</p>
         <FoodItems items={foodItems}></FoodItems>
       </Container>
 
