@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FoodItems from "./components/FoodItems.jsx";
 import ErrorMsg from "./components/ErrorMsg.jsx";
 import Container from "./components/Container.jsx";
@@ -8,13 +8,15 @@ import "./App.css";
 
 function App() {
   let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
-  let textToShow = "All the food items are healthy and nutritious.";
 
   // let foodItems = [];
+  let [textToShow, setTextState] = useState(
+    "All the food items are healthy and nutritious."
+  );
 
   const handleChange = (event) => {
     console.log(`New food item: ${event.target.value}`);
-    textToShow = event.target.value;
+    setTextState(event.target.value);
   };
 
   return (
