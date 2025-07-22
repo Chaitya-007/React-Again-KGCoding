@@ -1,6 +1,7 @@
 import React from "react";
 import FoodItems from "./components/FoodItems.jsx";
 import ErrorMsg from "./components/ErrorMsg.jsx";
+import Container from "./components/Container.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -11,9 +12,15 @@ function App() {
 
   return (
     <>
-      <h1 className="food-heading">Healthy Food</h1>
-      <ErrorMsg items={foodItems}></ErrorMsg>
-      <FoodItems items={foodItems}></FoodItems>
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <ErrorMsg items={foodItems}></ErrorMsg>
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
+
+      <Container>
+        <p>All the food items are healthy and nutritious.</p>
+      </Container>
     </>
   );
 }
