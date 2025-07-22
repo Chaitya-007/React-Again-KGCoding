@@ -1,5 +1,7 @@
 .calculator
 {
-  background-color: brown;
-  border: 
+  border: 1px solid black;
+  width: 300px;
+  border-radius: 10px;
 }
+

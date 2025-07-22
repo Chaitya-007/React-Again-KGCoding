@@ -6,3 +6,22 @@ That's why we always store multiple components in a single component
 
 For Css 
 The css that is defined in many files, keep that css as global
+
+Inline vs Block Elements:
+• Block-level elements
+– Default display: block
+– Always start on a new line
+– By default stretch to fill their container’s width
+– You can set width/height/margins on all four sides
+– Examples: <div>, <p>, <h1>–<h6>, <ul>, <section>
+
+• Inline elements
+– Default display: inline
+– Flow within a line of text (no forced line break)
+– Width/height come from their content; vertical margins/paddings don’t affect layout
+– Examples: <span>, <a>, <strong>, <em>, <img>, <input>
+
+• Inline-block
+– Hybrid: flows inline but accepts width/height/margins/paddings like a block
+
+Knowing the default display mode helps you pick the right centering strategy (e.g. margin: auto only works on block-level or inline-block elements).
