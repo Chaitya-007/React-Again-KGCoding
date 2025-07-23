@@ -3,6 +3,7 @@ import AppName from "./components/AppName";
 import Todoitems from "./components/Todoitems";
 import { useState } from "react";
 import "./App.css";
+import WelcomeMessage from "./components/WelcomeMessage";
 
 function App() {
   // const todoItems = [
@@ -12,16 +13,7 @@ function App() {
   //   },
   // ];
 
-  let [todoItems, setTodoItems] = useState([
-    {
-      name: "Buy Milk",
-      dueDate: "4/10/2023",
-    },
-    {
-      name: "Go to College",
-      dueDate: "4/10/2023",
-    },
-  ]);
+  let [todoItems, setTodoItems] = useState([]);
 
   const addTodo = (name, dueDate) => {
     let newTodo = [
@@ -38,6 +30,8 @@ function App() {
     <center className="todo-container">
       <AppName />
       <AddToDo onAdd={addTodo} />
+      {todoItems.length === 0 && <WelcomeMessage />}
+
       <Todoitems todoItems={todoItems}></Todoitems>
     </center>
   );

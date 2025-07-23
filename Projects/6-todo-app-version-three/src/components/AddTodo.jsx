@@ -4,7 +4,7 @@ function AddToDo({ onAdd }) {
   const [todoName, setTodoName] = useState("");
   const [todoDate, setTodoDate] = useState("");
 
-  const hadleNameChange = (event) => {
+  const handleNameChange = (event) => {
     setTodoName(event.target.value);
   };
 
