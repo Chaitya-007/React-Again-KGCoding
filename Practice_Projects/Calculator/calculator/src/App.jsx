@@ -1,4 +1,5 @@
 import CustomButton from "./components/CustomButton";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -22,17 +23,27 @@ function App() {
     ".",
   ];
 
-  let str = "";
+  let [str, setStr] = useState("");
 
-  const handleBtnClick = (e) => {
-    str += e.target.value;
+  const onButtonClick = (num) => {
+    if (num === "C") {
+      setStr("");
+      return;
+    } else if (num === "=") {
+      setStr(eval(str));
+      return;
+    }
+
+    let newStr = str;
+    newStr += num;
+    setStr(newStr);
   };
 
   return (
     <center id="calculator">
-      <input id="calInput" type="text" />
+      <input id="calInput" type="text" value={str} readOnly />
       <div id="btn">
-        <CustomButton onClick={handleBtnClick} numbers={numbers} />
+        <CustomButton handleButtonClick={onButtonClick} numbers={numbers} />
       </div>
     </center>
   );
