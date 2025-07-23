@@ -24,7 +24,10 @@ const ButtonsContainer = ({ onButtonClick }) => {
   return (
     <div className={styles.buttonsContainer}>
       {buttonNames.map((buttonName) => (
-        <button className={styles.button} onClick={() => onButtonClick()}>
+        <button
+          className={styles.button}
+          onClick={() => onButtonClick(buttonName)}
+        >
           {buttonName}
         </button>
       ))}

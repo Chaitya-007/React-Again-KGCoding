@@ -5,11 +5,21 @@ import styles from "./App.module.css";
 
 function App() {
   let [calVal, setVal] = useState("");
+  const onButtonClick = (buttonText) => {
+    if (buttonText === "C") {
+      setVal("");
+      return;
+    } else if (buttonText === "=") {
+      setVal(eval(calVal).toString());
+    } else {
+      setVal(calVal + buttonText);
+    }
+  };
 
   return (
     <div className={styles.calculator}>
       <Display displayValue={calVal} />
-      <ButtonsContainer onButtonClick={() => console.log("Button clicked")} />
+      <ButtonsContainer onButtonClick={onButtonClick} />
     </div>
   );
 }
