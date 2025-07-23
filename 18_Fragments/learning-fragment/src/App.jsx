@@ -24,7 +24,6 @@ function App() {
         <h1 className="food-heading">Healthy Food</h1>
         <FoodInput handleKeyDown={onKeyDown}></FoodInput>
         <ErrorMsg items={foodItems}></ErrorMsg>
-
         <FoodItems items={foodItems}></FoodItems>
       </Container>
 
