@@ -7,25 +7,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-  let foodItems = ["Dal", "Rice", "Vegetables", "Fruits", "Nuts"];
+  let [foodItems, setFoodItems] = useState([]);
 
-  // let foodItems = [];
-  let [textToShow, setTextState] = useState(
-    "All the food items are healthy and nutritious."
-  );
-
-  const handleChange = (event) => {
-    console.log(`New food item: ${event.target.value}`);
-    setTextState(event.target.value);
+  const onKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let newFoodItem = event.target.value;
+      event.target.value = ""; // Clear the input field after adding the item
+      let newItems = [...foodItems, newFoodItem];
+      setFoodItems(newItems);
+    }
   };
 
   return (
     <>
       <Container>
         <h1 className="food-heading">Healthy Food</h1>
+        <FoodInput handleKeyDown={onKeyDown}></FoodInput>
         <ErrorMsg items={foodItems}></ErrorMsg>
-        <FoodInput handleChange={handleChange}></FoodInput>
-        <p>{textToShow}</p>
+
         <FoodItems items={foodItems}></FoodItems>
       </Container>
 
