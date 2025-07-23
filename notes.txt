@@ -28,3 +28,9 @@ Knowing the default display mode helps you pick the right centering strategy (e.
 
 .filter => return a new array with the elements that pass the test implemented by the provided function.
 the elements for which the condition is true will be included in the new array.
+
+
+onClick={() => onDelete} // this will pass the click event by default
+onClick={() => onDelete(event)} // this will pass the click event as an argument to the onDelete function
+onClick={() => onDelete()} // this will not pass any arguments
+onClick={() => onDelete(arg)} // this will pass arg as an argument to the onDelete function

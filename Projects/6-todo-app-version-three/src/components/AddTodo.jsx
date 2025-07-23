@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdOutlineAddCircleOutline } from "react-icons/md";
 
 function AddToDo({ onAdd }) {
   const [todoName, setTodoName] = useState("");
@@ -44,7 +45,7 @@ function AddToDo({ onAdd }) {
             className="btn btn-success kg-button"
             onClick={() => handleAddButtonClick(todoName, todoDate)}
           >
-            Add
+            <MdOutlineAddCircleOutline />
           </button>
         </div>
       </div>
