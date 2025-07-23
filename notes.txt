@@ -25,3 +25,6 @@ Inline vs Block Elements:
 – Hybrid: flows inline but accepts width/height/margins/paddings like a block
 
 Knowing the default display mode helps you pick the right centering strategy (e.g. margin: auto only works on block-level or inline-block elements).
+
+.filter => return a new array with the elements that pass the test implemented by the provided function.
+the elements for which the condition is true will be included in the new array.

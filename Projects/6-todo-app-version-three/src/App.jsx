@@ -26,13 +26,19 @@ function App() {
     setTodoItems(newTodo);
   };
 
+  const deleteTodo = (name) => {
+    // console.log(name);
+    const newTodoItems = todoItems.filter((item) => item.name !== name);
+    setTodoItems(newTodoItems);
+  };
+
   return (
     <center className="todo-container">
       <AppName />
       <AddToDo onAdd={addTodo} />
       {todoItems.length === 0 && <WelcomeMessage />}
 
-      <Todoitems todoItems={todoItems}></Todoitems>
+      <Todoitems todoItems={todoItems} onDelete={deleteTodo} />
     </center>
   );
 }
