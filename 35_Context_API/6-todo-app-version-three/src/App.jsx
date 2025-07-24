@@ -42,7 +42,7 @@ function App() {
   ];
 
   return (
-    <TodoitemsContext.Provider value={defaultTodoItems}>
+    <TodoitemsContext.Provider value={todoItems}>
       <center className="todo-container">
         <AppName />
         <AddToDo onAdd={addTodo} />
