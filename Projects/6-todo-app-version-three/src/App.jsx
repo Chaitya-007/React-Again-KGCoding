@@ -1,4 +1,4 @@
-import AddToDo from "./components/AddToDo";
+import AddToDo from "./components/AddToDo.jsx";
 import AppName from "./components/AppName";
 import Todoitems from "./components/Todoitems";
 import { useState } from "react";
@@ -16,14 +16,13 @@ function App() {
   let [todoItems, setTodoItems] = useState([]);
 
   const addTodo = (name, dueDate) => {
-    let newTodo = [
-      ...todoItems,
+    setTodoItems((currVal) => [
+      ...currVal,
       {
         name: name,
         dueDate: dueDate,
       },
-    ];
-    setTodoItems(newTodo);
+    ]);
   };
 
   const deleteTodo = (name) => {
