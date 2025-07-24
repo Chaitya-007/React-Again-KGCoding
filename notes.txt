@@ -34,3 +34,7 @@ onClick={() => onDelete} // this will pass the click event by default
 onClick={() => onDelete(event)} // this will pass the click event as an argument to the onDelete function
 onClick={() => onDelete()} // this will not pass any arguments
 onClick={() => onDelete(arg)} // this will pass arg as an argument to the onDelete function
+
+forms
+1] whenever you define any button in a form, it will submit the form by default
+2] to prevent the default behavior of a button in a form, you have to explicitly set the type of the button to "button"
