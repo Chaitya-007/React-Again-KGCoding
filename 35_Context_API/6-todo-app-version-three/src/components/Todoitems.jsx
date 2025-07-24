@@ -3,8 +3,10 @@ import { useContext } from "react";
 import Todoitem from "./Todoitem";
 import styles from "./Todoitems.module.css";
 
-const Todoitems = ({ onDelete }) => {
-  const todoItems = useContext(TodoitemsContext);
+const Todoitems = () => {
+  const contextObj = useContext(TodoitemsContext);
+  const todoItems = contextObj.todoItems;
+  const onDelete = contextObj.deleteItem;
 
   return (
     <>

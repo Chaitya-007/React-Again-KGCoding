@@ -3,7 +3,8 @@ import styles from "./WelcomeMessage.module.css";
 import { TodoitemsContext } from "../store/todo-items-store";
 
 const WelcomeMessage = () => {
-  const todoItems = useContext(TodoitemsContext);
+  const contextObj = useContext(TodoitemsContext);
+  const todoItems = contextObj.todoItems;
 
   return (
     todoItems.length === 0 && <p className={styles.welcome}>Enjoy your day!</p>

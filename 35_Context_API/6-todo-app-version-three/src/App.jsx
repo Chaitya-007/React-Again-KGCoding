@@ -7,16 +7,9 @@ import AddToDo from "./components/AddTodo";
 import { TodoitemsContext } from "./store/todo-items-store";
 
 function App() {
-  // const todoItems = [
-  //   {
-  //     name: "Complete Assignment",
-  //     dueDate: "4/12/2023",
-  //   },
-  // ];
-
   let [todoItems, setTodoItems] = useState([]);
 
-  const addTodo = (name, dueDate) => {
+  const addNewItem = (name, dueDate) => {
     let newTodo = [
       ...todoItems,
       {
@@ -27,20 +20,26 @@ function App() {
     setTodoItems(newTodo);
   };
 
-  const deleteTodo = (name) => {
+  const deleteItem = (name) => {
     // console.log(name);
     const newTodoItems = todoItems.filter((item) => item.name !== name);
     setTodoItems(newTodoItems);
   };
 
   return (
-    <TodoitemsContext.Provider value={todoItems}>
+    <TodoitemsContext.Provider
+      value={{
+        todoItems: todoItems,
+        addNewItem: addNewItem,
+        deleteItem: deleteItem,
+      }}
+    >
       <center className="todo-container">
         <AppName />
-        <AddToDo onAdd={addTodo} />
+        <AddToDo />
         <WelcomeMessage />
 
-        <Todoitems onDelete={deleteTodo} />
+        <Todoitems />
       </center>
     </TodoitemsContext.Provider>
   );
