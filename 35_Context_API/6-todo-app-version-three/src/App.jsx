@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./App.css";
 import WelcomeMessage from "./components/WelcomeMessage";
 import AddToDo from "./components/AddTodo";
+import { TodoitemsContext } from "./store/todo-items-store";
 
 function App() {
   // const todoItems = [
@@ -32,14 +33,24 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
-  return (
-    <center className="todo-container">
-      <AppName />
-      <AddToDo onAdd={addTodo} />
-      <WelcomeMessage todoItems={todoItems} />
+  const defaultTodoItems = [
+    /*{
+      name: "Complete Assignment",
+      dueDate: "4/12/2023",
+    },
+    */
+  ];
 
-      <Todoitems todoItems={todoItems} onDelete={deleteTodo} />
-    </center>
+  return (
+    <TodoitemsContext.Provider value={defaultTodoItems}>
+      <center className="todo-container">
+        <AppName />
+        <AddToDo onAdd={addTodo} />
+        <WelcomeMessage />
+
+        <Todoitems onDelete={deleteTodo} />
+      </center>
+    </TodoitemsContext.Provider>
   );
 }
 
