@@ -2,50 +2,35 @@ import React, { useState, useRef } from "react";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 
 function AddToDo({ onAdd }) {
-  const [todoName, setTodoName] = useState("");
-  const [todoDate, setTodoDate] = useState("");
-  const todoNameElement = useRef("");
+  const todoNameElement = useRef(0);
+  const dueDateElement = useRef(0);
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
+  const handleAddButtonClick = (event) => {
+    // Prevent default form submission behavior
+    event.preventDefault();
+    let todoName = todoNameElement.current.value;
+    let todoDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
 
-  const handleDateChange = (event) => {
-    setTodoDate(event.target.value);
-  };
-
-  const handleAddButtonClick = (todoName, todoDate) => {
     onAdd(todoName, todoDate);
-    setTodoName("");
-    setTodoDate("");
   };
 
   return (
     <div className="container text-center">
-      <form className="row kg-row">
+      <form className="row kg-row" onSubmit={handleAddButtonClick}>
         <div className="col-6">
           <input
             type="text"
             placeholder="Enter todo here..."
-            onChange={handleNameChange}
-            value={todoName}
+            ref={todoNameElement}
           />
         </div>
         <div className="col-4">
-          <input
-            type="date"
-            name=""
-            id=""
-            onChange={handleDateChange}
-            value={todoDate}
-          />
+          <input type="date" ref={dueDateElement} />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-success kg-button"
-            onClick={() => handleAddButtonClick(todoName, todoDate)}
-          >
+          <button type="submit" className="btn btn-success kg-button">
             <MdOutlineAddCircleOutline />
           </button>
         </div>
