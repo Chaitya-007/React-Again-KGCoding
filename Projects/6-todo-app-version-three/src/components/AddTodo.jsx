@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 
 function AddToDo({ onAdd }) {
   const [todoName, setTodoName] = useState("");
   const [todoDate, setTodoDate] = useState("");
+  const todoNameElement = useRef("");
 
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
@@ -21,7 +22,7 @@ function AddToDo({ onAdd }) {
 
   return (
     <div className="container text-center">
-      <div className="row kg-row">
+      <form className="row kg-row">
         <div className="col-6">
           <input
             type="text"
@@ -48,7 +49,7 @@ function AddToDo({ onAdd }) {
             <MdOutlineAddCircleOutline />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
