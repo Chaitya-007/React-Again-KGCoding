@@ -33,14 +33,6 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
-  const defaultTodoItems = [
-    /*{
-      name: "Complete Assignment",
-      dueDate: "4/12/2023",
-    },
-    */
-  ];
-
   return (
     <TodoitemsContext.Provider value={todoItems}>
       <center className="todo-container">
