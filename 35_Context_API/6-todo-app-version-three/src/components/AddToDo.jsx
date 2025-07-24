@@ -3,8 +3,7 @@ import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { TodoitemsContext } from "../store/todo-items-store";
 
 function AddToDo() {
-  const contextObj = useContext(TodoitemsContext);
-  const onAdd = contextObj.addNewItem;
+  const { addNewItem } = useContext(TodoitemsContext);
   const todoNameElement = useRef(0);
   const dueDateElement = useRef(0);
 
@@ -16,7 +15,7 @@ function AddToDo() {
     todoNameElement.current.value = "";
     dueDateElement.current.value = "";
 
-    onAdd(todoName, todoDate);
+    addNewItem(todoName, todoDate);
   };
 
   return (

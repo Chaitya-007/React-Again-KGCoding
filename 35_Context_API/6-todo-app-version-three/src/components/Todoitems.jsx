@@ -4,9 +4,7 @@ import Todoitem from "./Todoitem";
 import styles from "./Todoitems.module.css";
 
 const Todoitems = () => {
-  const contextObj = useContext(TodoitemsContext);
-  const todoItems = contextObj.todoItems;
-  const onDelete = contextObj.deleteItem;
+  const { todoItems, deleteItem } = useContext(TodoitemsContext);
 
   return (
     <>
@@ -16,7 +14,7 @@ const Todoitems = () => {
             key={item.name}
             todoName={item.name}
             todoDate={item.dueDate}
-            onDelete={onDelete}
+            deleteItem={deleteItem}
           />
         ))}
       </div>
